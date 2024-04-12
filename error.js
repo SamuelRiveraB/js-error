@@ -49,3 +49,17 @@ class AuthError extends Error {
 
 const a = new AuthError("Oopsie");
 console.log(a.favouriteSnack);
+
+// Error handling
+(function () {
+  try {
+    throw new Error();
+  } catch (err) {
+    var err = 5;
+    var boo = 10;
+    console.log("Err inside catch", err);
+  }
+
+  console.log("Err", err);
+  console.log("Boo", boo);
+})();
