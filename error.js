@@ -37,3 +37,15 @@ Promise.resolve("asyncfail")
   }
   console.log("Is this still good?");
 })();
+
+// Extending errors
+class AuthError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "AuthError";
+    this.favouriteSnack = "Grapes";
+  }
+}
+
+const a = new AuthError("Oopsie");
+console.log(a.favouriteSnack);
