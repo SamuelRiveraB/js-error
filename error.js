@@ -27,3 +27,13 @@ Promise.resolve("asyncfail")
   .catch((err) => {
     console.log("Final error", err);
   });
+
+// Async try catch
+(async function () {
+  try {
+    await Promise.reject("oopsie");
+  } catch (e) {
+    console.log(e);
+  }
+  console.log("Is this still good?");
+})();
